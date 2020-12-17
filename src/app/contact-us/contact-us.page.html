@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Contact us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input formControlName="email" autocapitalize inputmode="text"></ion-input>
+  </ion-item>
+  <div *ngFor="let error of errorMessages.email">
+    <ng-container *ngIf="email.hasError(error.type)&&(email.dirty||email.touched)">
+      <small class="error-message">{{error.message}}</small>
+    </ng-container>
+  </div>
+  
+  <ion-label position="floating">Password</ion-label>
+  <ion-input [type]="hide ? 'password' : 'text'" required></ion-input>
+  <ion-icon slot="end" [name]="hide ? 'eye' : 'eye-off'" (click)="hide = !hide"></ion-icon>
+
+</ion-content>

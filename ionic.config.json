@@ -1,0 +1,7 @@
+{
+  "name": "DoctorPC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
